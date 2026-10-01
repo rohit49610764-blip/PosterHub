@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PosterHub — Poster Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Poster<span>Hub</span></div>
+  <nav><button class="nav active" data-view="home">Marketplace</button><button class="nav" data-view="sell">Sell a Poster</button><button class="nav" data-view="purchases">My Purchases</button></nav>
+  <button class="sellTop" data-view="sell">＋ Sell</button>
+</header>
+<main>
+<section id="home" class="view">
+  <div class="hero">
+    <div><p class="eyebrow">CREATIVE MARKETPLACE</p><h1>Discover posters<br><span>made to stand out.</span></h1><p class="sub">Buy ready-to-use designs or share your own posters with the community.</p></div>
+    <div class="heroCard">🎨<b>Sell your design</b><small>Set any price — or make it free.</small><button data-view="sell">Start selling →</button></div>
+  </div>
+  <div class="toolbar"><input id="search" placeholder="Search posters..."><select id="category"><option>All categories</option><option>Birthday</option><option>Festival</option><option>School</option><option>Sports</option><option>Business</option><option>Social</option></select></div>
+  <div id="grid" class="grid"></div>
+</section>
+<section id="sell" class="view hidden">
+  <div class="pageHead"><p class="eyebrow">CREATOR STUDIO</p><h2>List your poster</h2><p>Upload a design, choose a price, and publish it to the marketplace.</p></div>
+  <form id="sellForm" class="form">
+    <label>Poster title<input id="title" required placeholder="e.g. Dashain Festival Poster"></label>
+    <label>Category<select id="cat"><option>Birthday</option><option>Festival</option><option>School</option><option>Sports</option><option>Business</option><option>Social</option></select></label>
+    <label>Description<textarea id="desc" placeholder="Tell buyers about your design"></textarea></label>
+    <label>Price (NPR)<input id="price" type="number" min="0" step="1" value="0"></label>
+    <label>Poster image<input id="posterFile" type="file" accept="image/*" required></label>
+    <div id="preview" class="uploadPreview">Your poster preview will appear here.</div>
+    <button class="primary" type="submit">Publish poster</button>
+  </form>
+</section>
+<section id="purchases" class="view hidden">
+  <div class="pageHead"><p class="eyebrow">YOUR LIBRARY</p><h2>My Purchases</h2><p>Posters you have unlocked will appear here.</p></div>
+  <div id="purchasesGrid" class="grid"></div>
+</section>
+</main>
+<div id="modal" class="modal hidden"><div class="modalBox"><button id="close" class="close">×</button><div id="modalContent"></div></div></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
